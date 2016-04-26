@@ -1,0 +1,51 @@
+body{
+background-color: white;
+}
+
+	
+.container {
+	height: 100%;
+	width: 100%;
+}
+
+img {
+	
+}
+
+.title{
+padding-left: 321px
+
+}
+
+.logo {
+	float: left; width: 300px;
+}
+
+.meetup {
+	float: left; width: 300px;
+	padding-left: 12px;
+
+}
+
+.space {
+	float: left; width: 400px;
+	padding-left: 12px;
+
+}
+
+.store {
+	float: left; width: 300px;
+	padding-left: 12px;
+
+}
+
+.item {
+	float: left; width: 300px;
+	padding-left: 12px;
+
+}
+
+.kitchen {
+	float: left; width: 300px;
+	padding-left: 12px;
+}

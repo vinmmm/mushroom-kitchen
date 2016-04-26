@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html ng-app="meetupApp"> 
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Mushrooms</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="css/main.css">
+      
+  </head>
+  <body>
+
+
+     <div class="logo">
+        <img src="/img/mushroom.png" alt="logo">
+     </div> 
+
+<h1>Kitchen</h1>
+      <!-- Meetups View -->
+      <div class="meetup" ng-controller="meetupsController">
+        <h2>Sign Up</h2>
+        <h3>There are {{meetups.length}} People Attending</h3>
+        <ol>
+          <li ng-repeat="meetup in meetups">
+            {{meetup.name}}
+          </li>
+        </ol>
+        <form ng-submit="createMeetup()">
+          <input type="text" placeholder="name" ng-model="meetupName"></input>
+          <button type="submit">Add</button>
+        </form> 
+        </div> 
+         
+
+
+
+    <div class="item" ng-controller="itemsController">
+        <h2>Stock Items</h2>
+        <h3>There are {{items.length}} Items In Stock</h3>
+        <ol>
+          <li ng-repeat="item in items | limitTo: 12">
+            {{item.name}}
+          </li>
+        </ol>
+        <form ng-submit="createItem()">
+          <input type="text" placeholder="Items" ng-model="itemName"></input>
+          <button type="submit">Add</button>
+        </form>
+   </div>
+
+
+<div class="kitchen" ng-controller="myController">
+    <h2>Get and Post using $http Service</h2>
+
+    <input type="button" ng-click="resetStore()"
+    value="Restock Store"/>
+    {{status}}
+    <hr>
+  
+
+    <div class="myList">
+      <h3>The Store</h3>
+      <div ng-repeat="(item, count) in items | limitTo: 7">
+        {{item}} ({{count}})
+        [<span ng-click="buyItem(item)">buy</span>]
+        
+      </div>
+    </div>   
+    
+    <div class="myList">
+      <h3>My Kitchen</h3>
+      <div ng-repeat="(item, count) in kitchenItems">
+        {{item}} ({{count}})
+        [<span ng-click="useItem(item)">use</span>]
+      </div>
+      
+    </div>
+  </div>
+
+
+
+   <br style="clear: left;" />    
+
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-resource.js"></script>
+
+      <script type="text/javascript" src="/js/app.js"></script>
+      <script type="text/javascript" src="/js/controllers/meetups-controller.js"></script>
+      <script type="text/javascript" src="/js/controllers/spaces-controller.js"></script>
+      <script type="text/javascript" src="/js/controllers/stores-controller.js"></script>
+      <script type="text/javascript" src="/js/controllers/items-controller.js"></script>
+      <script type="text/javascript" src="/js/controllers/kitchens-controller.js"></script>
+      
+  </body>
+</html>
+
+<!-- https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js -->
